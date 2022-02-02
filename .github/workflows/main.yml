@@ -27,5 +27,5 @@ jobs:
         run: pip3 install ansible-base
 
       - name: Trigger a new import on Galaxy.
-        run: ansible-galaxy role import --api-key ${{ secrets.GALAXY_API_KEY }} Mtze rke2-ansible
+        run: ansible-galaxy role import --api-key ${{ secrets.GALAXY_API_KEY }} Mtze ansible-docker-swap-grub
 
