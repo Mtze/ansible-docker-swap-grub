@@ -19,6 +19,7 @@
   notify: update grub
   when: configured.stdout == "0" and not only_check_if_configured
 
-- meta: flush_handlers
+- name: Flush Handlers
+  meta: flush_handlers
 
 
