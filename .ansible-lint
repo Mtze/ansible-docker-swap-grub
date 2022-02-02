@@ -1,0 +1,8 @@
+skip_list:
+  - '403'  # Package installs should not use latest
+  - '208'  # File permissions unset or incorrect
+  - '201'  # Trailing Whitespace
+  - command-instead-of-shell
+
+warn_list:
+  - yaml
