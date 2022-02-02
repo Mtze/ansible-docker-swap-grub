@@ -2,7 +2,9 @@ galaxy_info:
   author: Matthias Linhuber
   description: "Configure GRUB to fix dockers - WARNING: No swap limit support"
 
-  # issue_tracker_url: http://example.com/issue/tracker
+  role_name: docker_swap_grub
+  namespace: mtze
+  issue_tracker_url: https://github.com/Mtze/ansible-docker-swap-grub/issues
 
   license: MIT
 
