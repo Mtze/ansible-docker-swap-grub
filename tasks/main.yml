@@ -1,0 +1,24 @@
+---
+- name: Check if grub includes cgroup configuration
+  ansible.builtin.shell: grep -c 'cgroup_enable=memory swapaccount=1' /etc/default/grub & true
+  register: configured
+  ignore_errors: yes
+  changed_when: false
+
+
+- name: Configuration present?
+  debug: 
+    msg: "{{ configured }}"
+
+- name: Adapt GRUB config to include cgroup memory and swap settings
+  become: true
+  ansible.builtin.lineinfile:
+    path: "/etc/default/grub"
+    regex: 'GRUB_CMDLINE_LINUX="'
+    line: 'GRUB_CMDLINE_LINUX="cgroup_enable=memory swapaccount=1"'
+  notify: update grub
+  when: configured.stdout == "0" and not only_check_if_configured
+
+- meta: flush_handlers
+
+

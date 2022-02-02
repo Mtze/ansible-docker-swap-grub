@@ -1,0 +1,20 @@
+galaxy_info:
+  author: Matthias Linhuber
+  description: "Configure GRUB to fix dockers - WARNING: No swap limit support"
+
+  # issue_tracker_url: http://example.com/issue/tracker
+
+  license: MIT
+
+  min_ansible_version: 2.1
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - focal
+
+  galaxy_tags: [grub, docker, swap, limit]
+
+dependencies: []
+  # List your role dependencies here, one per line. Be sure to remove the '[]' above,
+  # if you add dependencies to this list.

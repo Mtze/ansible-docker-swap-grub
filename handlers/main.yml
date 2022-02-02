@@ -1,0 +1,13 @@
+---
+# handlers file for mtze.docker-swap-grub
+#
+- name: update grub
+  become: true
+  shell: update-grub2
+  notify: reboot
+
+- name: reboot
+  become: true
+  reboot:
+  when: allow_reboot
+  

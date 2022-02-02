@@ -1,0 +1,6 @@
+---
+# Reboot host after playbook 
+allow_reboot: true
+
+# Only check if the cgroup configuration is present
+only_check_if_configured: false
