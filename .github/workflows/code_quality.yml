@@ -1,0 +1,22 @@
+name: Code Quality
+
+on: [push, pull_request]
+
+jobs:
+  lint:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
+        cache: 'pip'
+
+    - name: Install python dependencies 
+      run: pip install -r requirements.txt
+
+    - name: Execute ansible-lint
+      run: ansible-lint
